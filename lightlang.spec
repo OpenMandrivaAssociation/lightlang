@@ -1,24 +1,15 @@
-# $Id: lightlang.spec $
-# Authority: akdengi
-# Upstream: lightlang.org.ru
-
 %define version 0.8.6
 %define	rel	7
 %define release %mkrel %{rel}
 
-%{?dist: %{expand: %%define %dist 1}}
-
 Summary: Dictionary Shell on Qt4
-Summary:ru Словарь на основе Qt4
 Name: lightlang
 Version:	%{version}
 Release:	%{release}
 License: GPL
-Group: Applications/Office
+Group: Office
 URL: http://lightlang.org.ru
 
-Packager: Alexander Kazantcev <kazancas@mandriva.ru>
-Vendor: EduMandriva <www.edumandriva.ru>
 Source: lightlang-%{version}-rev990.tar.bz2
 #Patch0: MyWindow.patch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
@@ -28,20 +19,18 @@ Requires: qt4-common, python-xlib, python-qt4, sox, lightlang-dict
 
 %description
 LightLang is a small and powerfull dictionary shell, writed on qt4 and has a many dictionary (ru-en and en-ru).
-%description -l ru
-LightLang это маленькая и быстрая словарная оболочка на Qt4 которая содержит в комплекте множество словарей (ru-en и en-ru).
 
 %package devel
 Summary:	Devel package for LightLang
 Summary(ru): Пакет разработки для Lightlang
-Group:		Applications/Office
+Group:		Office
 Requires:	%{name} = %{version}
 Requires:	pkgconfig
 %description devel
 %{summary}
 
 %prep
-%setup
+%setup -q
 
 %build
 
@@ -49,7 +38,7 @@ Requires:	pkgconfig
 make %{?_smp_mflags}
 
 %install
-rm -rf ${RPM_BUILD_ROOT}
+rm -rf %{buildroot}
 make DESTDIR=${RPM_BUILD_ROOT} install
 #mkdir -p ${RPM_BUILD_ROOT}/%{_localstatedir}/lib
 #mv -v ${RPM_BUILD_ROOT}/%{_datadir}/sl ${RPM_BUILD_ROOT}/%{_localstatedir}/lib/%{name}
@@ -59,7 +48,7 @@ make DESTDIR=${RPM_BUILD_ROOT} install
 %{__rm} -rf %{buildroot}
 
 %files
-%defattr(-, root, root, -)
+%defattr(-,root, root)
 %{_bindir}/sl
 %{_bindir}/xsl
 %{_bindir}/llrepo
@@ -82,5 +71,5 @@ make DESTDIR=${RPM_BUILD_ROOT} install
 %doc %{_mandir}/ru/man1/*.lzma
 
 %files devel
+%defattr(-,root, root)
 %{_libdir}/pkgconfig/lightlang.pc
-
