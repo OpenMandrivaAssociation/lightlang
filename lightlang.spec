@@ -14,7 +14,7 @@ Source: lightlang-%{version}-rev990.tar.bz2
 #Patch0: MyWindow.patch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 
-BuildRequires: qt4-common >= 4.4.3, python-xlib, python-qt4 >= 4.2.2, python-sip >= 4.2.2, xterm, sox
+BuildRequires: qt4-common >= 4.4.3, python-xlib, python-qt4 >= 4.2.2, python-sip >= 4.2.2, xterm, sox, mplayer
 Requires: qt4-common, python-xlib, python-qt4, sox, lightlang-dict
 
 %description
