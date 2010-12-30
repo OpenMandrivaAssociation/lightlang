@@ -66,9 +66,9 @@ make DESTDIR=${RPM_BUILD_ROOT} install
 %{_datadir}/sl
 %{_datadir}/sl
 %{_datadir}/xsl
-%{_docdir}/lightlang
-%{_mandir}/man1/*.lzma
-%{_mandir}/ru/man1/*.lzma
+%doc %{_docdir}/lightlang
+%doc %{_mandir}/man1/
+%doc %{_mandir}/ru/man1/
 
 %files devel
 %defattr(-,root, root)
