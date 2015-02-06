@@ -1,7 +1,7 @@
 Summary: Dictionary Shell on Qt4
 Name: lightlang
 Version:	0.8.6
-Release:	8
+Release:	9
 License: GPL
 Group: Office
 URL: http://lightlang.org.ru
