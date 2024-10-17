@@ -4,7 +4,7 @@ Version:	0.8.6
 Release:	9
 License: GPL
 Group: Office
-URL: http://lightlang.org.ru
+URL: https://lightlang.org.ru
 
 Source: lightlang-%{version}-rev990.tar.bz2
 #Patch0: MyWindow.patch
